@@ -1,4 +1,4 @@
-const PERIODA = 10;
+const PERIODA = 20;
 const LIGHT_LIMIT = 50;
 
 let start = false;
@@ -8,7 +8,7 @@ let avg = 0;
 function prumer(x: number) {
     const vaha = 3;
 
-    avg -= avg / vaha;
+    avg =- avg / vaha;
     avg += x;
 
     return (avg / vaha);
