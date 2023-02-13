@@ -6,23 +6,21 @@ let done = false;
 let avg = 0;
 
 function prumer(x: number) {
-    const VAHA = 3;
+    const vaha = 3;
 
-    avg -= avg / VAHA;
+    avg -= avg / vaha;
     avg += x;
 
-    return (avg / VAHA);
+    return (avg / vaha);
 }
 
 
 basic.forever(function () {
-
     radio.setGroup(1)
     radio.setFrequencyBand(20)
     radio.setTransmitPower(5)
     console.logValue("light level", input.lightLevel())
     console.log("\n\r")
-    
     while (true) {
         basic.pause(PERIODA); //aby bylo definovany, jak rychle to bezi
         // mereni svetla musi byt na zacatku, aby to aktualizovalo prumer
@@ -43,15 +41,15 @@ basic.forever(function () {
 })
 
 input.onButtonPressed(Button.A, function () {
-    music.playTone(Note.A, music.beat(BeatFraction.Whole))
-    basic.pause(100)
+    
     music.playTone(Note.C, music.beat(BeatFraction.Whole))
-    basic.pause(100)
+    basic.pause(1000)
+    music.playTone(Note.C, music.beat(BeatFraction.Whole))
+    basic.pause(1000)
     music.playTone(Note.D, music.beat(BeatFraction.Whole))
     start = true;
 })
 
 input.onButtonPressed(Button.B, function () {
     done = false;
-    start = false;
 })
