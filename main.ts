@@ -22,9 +22,7 @@ basic.forever(function () {
     console.logValue("light level", input.lightLevel())
     console.log("\n\r")
     while (true) {
-        basic.pause(PERIODA); //aby bylo definovany, jak rychle to bezi
-        // mereni svetla musi byt na zacatku, aby to aktualizovalo prumer
-        // i v dobe kdy to ceka na tlacitko
+        basic.pause(PERIODA); 
         let light = prumer(input.lightLevel());
 
         if (done === true)
